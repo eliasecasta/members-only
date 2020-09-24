@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'posts#new'
+  devise_for :users, path: '/', path_names: { sign_in: 'login', sign_out: 'logout' }
+  root to: 'posts#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :posts, only: %i[new create index]
 end

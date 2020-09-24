@@ -1,0 +1,23 @@
+<h1>Posts</h1>
+
+<header style="margin: 1rem">
+  <% if user_signed_in? %>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Login', new_user_session_path %>
+    <br>
+    <%= link_to 'Sign Up', new_user_registration_path %>
+  <% end %>
+</header>
+
+<% @posts.each do |post| %>
+  <hr>
+  <div>
+    <h3>Title: <%= post.title %></h3>
+    <% if user_signed_in? %>
+      <span>Author: <%= @user.fullname %></span>
+    <% end %>
+    <br>
+    <p><%= post.body %></p>
+  </div>
+<% end %>

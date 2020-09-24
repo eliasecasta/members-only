@@ -1,6 +1,15 @@
-<%= form_for @post do |f| %>
-  <%= f.label :title, "Title:" %>
-  <%= f.text_field :title %>
-  <%= f.label :body, "Body:" %>
-  <%= f.text_area :body %>
-<% end %>
+<main style="margin: 10rem">
+  <%= form_for @post do |f| %>
+    <%= f.label :title, "Title:" %>
+    <br>
+    <%= f.text_field :title %>
+    <br>
+    <br>
+    <%= f.label :body, "Body:" %>
+    <br>
+    <%= f.text_area :body %>
+    <br>
+    <br>
+    <%= f.submit %>
+  <% end %>
+</main>
