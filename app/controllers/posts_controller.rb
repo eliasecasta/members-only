@@ -7,12 +7,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @user  = current_user
+    @user = current_user
   end
 
   def create
-    @post         = Post.new(post_params)
-    user_id       = current_user.id
+    @post = Post.new(post_params)
+    user_id = current_user.id
     @post.user_id = user_id
 
     if @post.save
