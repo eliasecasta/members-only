@@ -1,0 +1,9 @@
+<header style="margin: 1rem">
+  <%= user_session_options %>
+</header>
+
+<h1>Posts</h1>
+
+<%= link_to 'Create A New Post', new_post_path %>
+
+<%= render partial: "post", collection: @posts %>
